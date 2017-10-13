@@ -37,7 +37,7 @@ CREATE TABLE reviews (
   location_id INT,
   menu_item_id INT,
   description TEXT,
-  value INT,
+  score INT,
   created_by VARCHAR(50) NOT NULL,
   created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP(3),
   updated_by  VARCHAR(50) NOT NULL,
@@ -56,6 +56,7 @@ CREATE TABLE favorites (
 CREATE TABLE images (
   id INT,
   cloudinary_id VARCHAR(50),
+  user_id INT,
   location_id INT,
   menu_item_id INT,
   review_id INT,
