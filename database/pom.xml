@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.taco-truck</groupId>
+    <artifactId>database</artifactId>
+    <packaging>pom</packaging>
+
+    <name>TacoTruck Database Migrations</name>
+
+    <parent>
+        <groupId>com.taco-truck</groupId>
+        <artifactId>taco-truck-parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <flyway.url>jdbc:postgresql://localhost:5432/taco_truck</flyway.url>
+        <flyway.user>postgres</flyway.user>
+        <flyway.password>password</flyway.password>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>4.1.2</version>
+                <configuration>
+                    <locations>
+                        <location>filesystem:migrations</location>
+                    </locations>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
