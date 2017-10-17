@@ -7,11 +7,11 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Location {
+public class Locations {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String name;
     private String address;
     private String city;
@@ -22,11 +22,11 @@ public class Location {
     private String updatedBy;
     private Date updatedOn;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
