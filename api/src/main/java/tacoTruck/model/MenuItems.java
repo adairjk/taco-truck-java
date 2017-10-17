@@ -7,42 +7,41 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Review {
+public class MenuItems {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
-    private Integer locationId;
-    private Integer menuItemId;
+    private Long id;
+    private Long locationId;
+    private String name;
     private String description;
-    private Integer score;
     private String createdBy;
     private Date createdOn;
     private String updatedBy;
     private Date updatedOn;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getLocationId() {
+    public Long getLocationId() {
         return locationId;
     }
 
-    public void setLocationId(Integer locationId) {
+    public void setLocationId(Long locationId) {
         this.locationId = locationId;
     }
 
-    public Integer getMenuItemId() {
-        return menuItemId;
+    public String getName() {
+        return name;
     }
 
-    public void setMenuItemId(Integer menuItemId) {
-        this.menuItemId = menuItemId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -51,14 +50,6 @@ public class Review {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Integer getScore() {
-        return score;
-    }
-
-    public void setScore(Integer score) {
-        this.score = score;
     }
 
     public String getCreatedBy() {

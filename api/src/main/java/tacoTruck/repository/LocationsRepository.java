@@ -1,4 +1,4 @@
-package tacoTruck.controller;
+package tacoTruck.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
