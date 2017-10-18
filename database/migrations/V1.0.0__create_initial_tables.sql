@@ -63,3 +63,5 @@ CREATE TABLE images (
   created_by VARCHAR(50) NOT NULL,
   created_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP(3)
 );
+
+CREATE SEQUENCE hibernate_sequence START 1;
