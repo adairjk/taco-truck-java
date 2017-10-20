@@ -5,46 +5,47 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import tacoTruck.model.Locations;
+import tacoTruck.model.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import javax.validation.Valid;
 
-import tacoTruck.repository.LocationsRepository;
+import tacoTruck.repository.LocationRepository;
 import java.util.Date;
 
 @RestController
 @RequestMapping("/locations")
-public class LocationsController {
+public class LocationController {
     @Autowired
 
-    private LocationsRepository locationsRepository;
+    private LocationRepository locationRepository;
 
     @GetMapping()
-    public @ResponseBody Iterable<Locations> getAllLocations() {
-        return locationsRepository.findAll();
+    public @ResponseBody Iterable<Location> getAllLocations() {
+        return locationRepository.findAll();
     }
 
     @PostMapping()
-    public ResponseEntity createLocation(@Valid @RequestBody Locations location, HttpServletRequest request) {
+    public ResponseEntity createLocation(@Valid @RequestBody Location location, HttpServletRequest request) {
         location.setCreatedOn(new Date());
-        locationsRepository.save(location);
+        locationRepository.save(location);
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.set("Location", request.getRequestURL() + "/" + location.getId().toString());
-        return new ResponseEntity<Locations>(null, responseHeaders, HttpStatus.CREATED);
+        return new ResponseEntity<Location>(null, responseHeaders, HttpStatus.CREATED);
     }
 
     @GetMapping(path="/id/{id}")
-    public @ResponseBody Locations getLocationById(@PathVariable("id") Long id) {
-        Locations location = locationsRepository.findOne(id);
+    public @ResponseBody
+    Location getLocationById(@PathVariable("id") Long id) {
+        Location location = locationRepository.findOne(id);
         if(location == null) throw new EmptyResultDataAccessException(0);
         return location;
     }
 
     @PutMapping("/id/{id}")
     public ResponseEntity updateNote(@PathVariable(value = "id") Long id,
-                                           @Valid @RequestBody Locations locationDetails) {
-        Locations location = locationsRepository.findOne(id);
+                                           @Valid @RequestBody Location locationDetails) {
+        Location location = locationRepository.findOne(id);
         if(location == null) throw new EmptyResultDataAccessException(0);
 
         if(locationDetails.getName() != null) location.setName(locationDetails.getName());
@@ -55,13 +56,13 @@ public class LocationsController {
         if(locationDetails.getUpdatedBy() != null) location.setUpdatedBy(locationDetails.getUpdatedBy());
         location.setUpdatedOn(new Date());
 
-        locationsRepository.save(location);
+        locationRepository.save(location);
         return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping(path="/id/{id}")
     public ResponseEntity deleteLocationById(@PathVariable("id") Long id) {
-        locationsRepository.delete(id);
+        locationRepository.delete(id);
         return ResponseEntity.noContent().build();
     }
 }
