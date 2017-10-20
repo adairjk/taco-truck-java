@@ -35,10 +35,10 @@ public class LocationsController {
     }
 
     @GetMapping(path="/id/{id}")
-    public ResponseEntity<Locations> getLocationById(@PathVariable("id") Long id) {
+    public @ResponseBody Locations getLocationById(@PathVariable("id") Long id) {
         Locations location = locationsRepository.findOne(id);
         if(location == null) throw new EmptyResultDataAccessException(0);
-        return ResponseEntity.ok().body(location);
+        return location;
     }
 
     @PutMapping("/id/{id}")
