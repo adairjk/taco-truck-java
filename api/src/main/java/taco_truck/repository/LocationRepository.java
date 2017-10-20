@@ -1,8 +1,8 @@
-package tacoTruck.repository;
+package taco_truck.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import tacoTruck.model.Location;
+import taco_truck.model.Location;
 
 public interface LocationRepository extends CrudRepository<Location, Long> {
 

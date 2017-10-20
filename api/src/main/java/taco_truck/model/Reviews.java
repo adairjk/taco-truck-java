@@ -1,4 +1,4 @@
-package tacoTruck.model;
+package taco_truck.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,14 +7,15 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class MenuItems {
+public class Reviews {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
     private Long locationId;
-    private String name;
+    private Long menuItemId;
     private String description;
+    private Integer score;
     private String createdBy;
     private Date createdOn;
     private String updatedBy;
@@ -36,12 +37,12 @@ public class MenuItems {
         this.locationId = locationId;
     }
 
-    public String getName() {
-        return name;
+    public Long getMenuItemId() {
+        return menuItemId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMenuItemId(Long menuItemId) {
+        this.menuItemId = menuItemId;
     }
 
     public String getDescription() {
@@ -50,6 +51,14 @@ public class MenuItems {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 
     public String getCreatedBy() {

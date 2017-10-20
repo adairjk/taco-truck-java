@@ -1,4 +1,4 @@
-package tacoTruck.model;
+package taco_truck.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

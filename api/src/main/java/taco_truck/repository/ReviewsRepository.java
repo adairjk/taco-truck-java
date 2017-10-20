@@ -1,7 +1,7 @@
-package tacoTruck.repository;
+package taco_truck.repository;
 
 import org.springframework.data.repository.CrudRepository;
-import tacoTruck.model.Reviews;
+import taco_truck.model.Reviews;
 
 public interface ReviewsRepository extends CrudRepository<Reviews, Long> {
 

@@ -1,4 +1,4 @@
-package tacoTruck.controller.advice;
+package taco_truck.controller.advice;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;

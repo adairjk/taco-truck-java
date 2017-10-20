@@ -1,4 +1,4 @@
-package tacoTruck.controller;
+package taco_truck.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import tacoTruck.model.MenuItems;
-import tacoTruck.repository.MenuItemsRepository;
+import taco_truck.model.MenuItems;
+import taco_truck.repository.MenuItemsRepository;
 
 @Controller
 @RequestMapping("/menu-items")

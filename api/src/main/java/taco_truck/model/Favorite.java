@@ -1,4 +1,4 @@
-package tacoTruck.model;
+package taco_truck.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,17 +7,15 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class Image {
+public class Favorite {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
-    private String cloudinaryId;
     private Integer userId;
     private Integer locationId;
     private Integer menuItemId;
     private Integer reviewId;
-    private String createdBy;
     private Date createdOn;
 
     public Integer getId() {
@@ -26,14 +24,6 @@ public class Image {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getCloudinaryId() {
-        return cloudinaryId;
-    }
-
-    public void setCloudinaryId(String cloudinaryId) {
-        this.cloudinaryId = cloudinaryId;
     }
 
     public Integer getUserId() {
@@ -66,14 +56,6 @@ public class Image {
 
     public void setReviewId(Integer reviewId) {
         this.reviewId = reviewId;
-    }
-
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
     }
 
     public Date getCreatedOn() {

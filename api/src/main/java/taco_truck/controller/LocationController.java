@@ -1,16 +1,16 @@
-package tacoTruck.controller;
+package taco_truck.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import tacoTruck.model.Location;
+import taco_truck.model.Location;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import javax.validation.Valid;
 
-import tacoTruck.repository.LocationRepository;
+import taco_truck.repository.LocationRepository;
 import java.util.Date;
 
 @RestController

@@ -1,4 +1,4 @@
-package tacoTruck.model;
+package taco_truck.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,16 +6,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
-public class Reviews {
+@Entity(name="locations")
+public class Location {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private Long locationId;
-    private Long menuItemId;
-    private String description;
-    private Integer score;
+    private String name;
+    private String address;
+    private String city;
+    private String state;
+    private String zip;
     private String createdBy;
     private Date createdOn;
     private String updatedBy;
@@ -29,36 +30,44 @@ public class Reviews {
         this.id = id;
     }
 
-    public Long getLocationId() {
-        return locationId;
+    public String getName() {
+        return name;
     }
 
-    public void setLocationId(Long locationId) {
-        this.locationId = locationId;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Long getMenuItemId() {
-        return menuItemId;
+    public String getAddress() {
+        return address;
     }
 
-    public void setMenuItemId(Long menuItemId) {
-        this.menuItemId = menuItemId;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCity() {
+        return city;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public Integer getScore() {
-        return score;
+    public String getState() {
+        return state;
     }
 
-    public void setScore(Integer score) {
-        this.score = score;
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
     }
 
     public String getCreatedBy() {
