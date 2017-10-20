@@ -43,7 +43,7 @@ public class LocationController {
     }
 
     @PutMapping("/id/{id}")
-    public ResponseEntity updateNote(@PathVariable(value = "id") Long id,
+    public ResponseEntity updateLocation(@PathVariable(value = "id") Long id,
                                            @Valid @RequestBody Location locationDetails) {
         Location location = locationRepository.findOne(id);
         if(location == null) throw new EmptyResultDataAccessException(0);
@@ -61,7 +61,7 @@ public class LocationController {
     }
 
     @DeleteMapping(path="/id/{id}")
-    public ResponseEntity deleteLocationById(@PathVariable("id") Long id) {
+    public ResponseEntity deleteLocation(@PathVariable("id") Long id) {
         locationRepository.delete(id);
         return ResponseEntity.noContent().build();
     }

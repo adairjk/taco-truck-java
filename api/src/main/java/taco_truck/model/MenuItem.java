@@ -6,8 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
-public class MenuItems {
+@Entity(name="menu_items")
+public class MenuItem {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
