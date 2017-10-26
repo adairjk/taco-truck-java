@@ -6,8 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
-@Entity
-public class Reviews {
+@Entity(name="reviews")
+public class Review {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
