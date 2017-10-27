@@ -5,7 +5,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import taco_truck.model.MenuItem;
 import taco_truck.model.Review;
 import taco_truck.repository.ReviewRepository;
 
