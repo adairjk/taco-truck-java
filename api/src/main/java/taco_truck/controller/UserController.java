@@ -1,4 +1,4 @@
-package taco_truck.controller.advice;
+package taco_truck.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -6,7 +6,6 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import taco_truck.model.Location;
 import taco_truck.model.User;
 import taco_truck.repository.UserRepository;
 

@@ -5,4 +5,5 @@ import taco_truck.model.Favorite;
 
 public interface FavoriteRepository extends CrudRepository<Favorite, Long> {
 
+    Iterable<Favorite> findFavoritesByUserId(Long id);
 }
