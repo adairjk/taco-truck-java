@@ -15,9 +15,9 @@
     </parent>
 
     <properties>
-        <flyway.url>jdbc:postgresql://localhost:5432/taco_truck</flyway.url>
-        <flyway.user>postgres</flyway.user>
-        <flyway.password>password</flyway.password>
+        <flyway.url>${DB_HOST}</flyway.url>
+        <flyway.user>${DB_USERNAME}</flyway.user>
+        <flyway.password>${DB_PASSWORD}</flyway.password>
     </properties>
 
     <build>
